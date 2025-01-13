@@ -14,6 +14,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-pokeapi-plugin`,
       options: {},
     },
+    `gatsby-theme-material-ui`,
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',

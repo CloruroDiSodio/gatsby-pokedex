@@ -1,8 +1,8 @@
 import * as React from 'react';
 import type { PageProps } from 'gatsby';
-import { graphql } from 'gatsby';
-import Card from '../components/Card';
+import { graphql, Link } from 'gatsby';
 import './index.scss';
+import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
 
 interface PokemonNode {
   id: string;
@@ -33,11 +33,27 @@ const IndexPage: React.FC<IProps> = ({ data }) => {
     <main>
       <h1>Pokédex</h1>
       {/* TODO: page structure*/}
-      <div className="container">
+      <Grid container spacing={2}>
         {data.allPokemon.nodes.map(({ image, name }) => (
-          <Card image={image} title={name} />
+          <Grid item xs={12} sm={6} md={4} lg={2} key={name}>
+            <Link to={`/${name.toLowerCase()}`} className="card">
+              <Card className="card">
+                <CardMedia
+                  className="card__image"
+                  component="img"
+                  src={image}
+                  title={name}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {name}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Link>
+          </Grid>
         ))}
-      </div>
+      </Grid>
     </main>
   );
 };
