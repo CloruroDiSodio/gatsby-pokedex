@@ -1,6 +1,8 @@
 import * as React from 'react';
 import type { PageProps } from 'gatsby';
 import { graphql } from 'gatsby';
+import Card from '../components/Card';
+import './index.scss';
 
 interface PokemonNode {
   id: string;
@@ -31,9 +33,11 @@ const IndexPage: React.FC<IProps> = ({ data }) => {
     <main>
       <h1>Pokédex</h1>
       {/* TODO: page structure*/}
-      {data.allPokemon.nodes.map((pokemon) => (
-        <div>{pokemon.name}</div>
-      ))}
+      <div className="container">
+        {data.allPokemon.nodes.map(({ image, name }) => (
+          <Card image={image} title={name} />
+        ))}
+      </div>
     </main>
   );
 };
