@@ -1,0 +1,8 @@
+{
+  "name": "gatsby-pokeapi-plugin",
+  "version": "1.0.0",
+  "main": "gatsby-node.js",
+  "description": "A Gatsby plugin to source Pokémon data from the Pokémon API",
+  "author": "Your Name",
+  "license": "MIT"
+}
