@@ -42,6 +42,7 @@ const PokemonPage: React.FC<PageProps<{}, PageContext>> = ({ pageContext }) => {
             label={localizedData?.genus}
             sx={{ marginBottom: '16px' }}
           />
+          {/*TODO: the description has hidden chars that broke the spaces on mobile*/}
           <Typography component="p">{localizedData?.description}</Typography>
         </CardContent>
       </Card>
