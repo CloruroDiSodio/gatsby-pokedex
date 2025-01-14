@@ -50,12 +50,15 @@ const Home: React.FC<IHome> = ({ data, pageContext }) => {
 
   useEffect(() => {
     let list = [...pokemonList];
-    list = list.filter((el) =>
-      el.name.toLowerCase().includes(value.toLowerCase()),
-    );
+    list = list.filter((pokemon) => {
+      const localizedName =
+        pokemon.langData.find((entry) => entry.language === language)?.name ||
+        pokemon.name;
+      return localizedName.toLowerCase().includes(value.toLowerCase());
+    });
     setFilteredList(list);
     setCurrentPage(1); // Reset to the first page after filtering
-  }, [value, pokemonList]);
+  }, [value, language, pokemonList]);
 
   // Calculate the paginated list for the current page
   const paginatedList = filteredList.slice(
@@ -89,7 +92,7 @@ const Home: React.FC<IHome> = ({ data, pageContext }) => {
       />
       {filteredList.length === 0 && <Typography>No match found</Typography>}
       <Grid container spacing={2} sx={{ paddingBottom: 7 }}>
-        {paginatedList.map((pokemon: PokemonNode, index: number) => {
+        {paginatedList.map((pokemon: PokemonNode) => {
           const localizedName =
             pokemon.langData.find((entry) => entry.language === language)
               ?.name || pokemon.name;
