@@ -1,49 +1,32 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+# Pokèdex app
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+ **Run the project**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+Navigate into your new site’s directory and start it up.
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
+    
+    cd gastby-pokedex/
     npm run develop
-    ```
+    
 
-3.  **Open the code and start customizing!**
+Your site is now running at http://localhost:8000!
 
-    Your site is now running at http://localhost:8000!
+**Run the test**
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+        npm run test:e2e
 
-4.  **Learn more**
+It will open the CLI for you to run all the specs.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+## 📚 Libraries
 
-## 🚀 Quick start (Netlify)
+- [Material UI](https://mui.com/material-ui/): components library
+- [i18next](https://www.i18next.com/): localization
+- [Prettier](https://prettier.io/): code formatter 
+- [Cypress](https://www.cypress.io/): End-To-End testing
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+##  🌎 Public url
+
+You can find a deployed version of the website [here](https://678636456247560008ae0849--voluble-halva-9279c7.netlify.app/)
