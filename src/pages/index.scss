@@ -9,6 +9,14 @@ html, body {
   padding: 16px;
 }
 
+.redirecting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background-color: azure;
+}
+
 .card {
   text-decoration: none;
   text-align: center;
