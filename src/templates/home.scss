@@ -1,7 +1,28 @@
 .home {
+  background-color: azure;
+  padding: 16px;
+
   &__title {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &__pagination {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+  }
+
+  &__back-to-top {
+    position: fixed;
+    right: 18px;
+    bottom: 70px;
   }
 }

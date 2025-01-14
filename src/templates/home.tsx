@@ -9,6 +9,7 @@ import {
   Typography,
   Pagination,
   TextField,
+  Fab,
 } from '@mui/material';
 import './home.scss';
 
@@ -62,8 +63,12 @@ const Home: React.FC<IHome> = ({ data, pageContext }) => {
     currentPage * pageSize,
   );
 
+  const backToTop = () => {
+    window[`scrollTo`]({ top: 0, behavior: `smooth` });
+  };
+
   return (
-    <div className="container">
+    <div className="home">
       <div className="home__title">
         <Typography gutterBottom variant="h2" component="div">
           Pokèdex
@@ -83,17 +88,7 @@ const Home: React.FC<IHome> = ({ data, pageContext }) => {
         onChange={(e) => setValue(e.target.value)}
       />
       {filteredList.length === 0 && <Typography>No match found</Typography>}
-      {filteredList.length > 0 && (
-        <Pagination
-          sx={{ justifyContent: 'center', marginBottom: '16px' }}
-          color="primary"
-          count={Math.ceil(filteredList.length / pageSize)}
-          page={currentPage}
-          onChange={(e, p) => setCurrentPage(p)}
-          size="small"
-        />
-      )}
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{ paddingBottom: 7 }}>
         {paginatedList.map((pokemon: PokemonNode, index: number) => {
           const localizedName =
             pokemon.langData.find((entry) => entry.language === language)
@@ -123,15 +118,27 @@ const Home: React.FC<IHome> = ({ data, pageContext }) => {
         })}
       </Grid>
       {filteredList.length > 0 && (
-        <Pagination
-          sx={{ justifyContent: 'center', marginTop: '28px' }}
-          color="primary"
-          count={Math.ceil(filteredList.length / pageSize)}
-          size="small"
-          page={currentPage}
-          onChange={(e, p) => setCurrentPage(p)}
-        />
+        <div className="home__pagination-container">
+          <Pagination
+            className="home__pagination"
+            color="primary"
+            count={Math.ceil(filteredList.length / pageSize)}
+            size="small"
+            page={currentPage}
+            onChange={(e, p) => {
+              backToTop();
+              setCurrentPage(p);
+            }}
+          />
+        </div>
       )}
+      <Fab
+        size="small"
+        onClick={() => backToTop()}
+        className="home__back-to-top"
+      >
+        🔝
+      </Fab>
     </div>
   );
 };
