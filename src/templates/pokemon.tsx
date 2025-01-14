@@ -21,7 +21,7 @@ const PokemonPage: React.FC<PageProps<{}, PageContext>> = ({ pageContext }) => {
   return (
     <div className="pokemon-detail">
       <div className="pokemon-detail__actions">
-        <Link to="/" className="pokemon-detail__go-back">
+        <Link to={`/${language}`} className="pokemon-detail__go-back">
           <Typography>⬅️ Back to homepage</Typography>
         </Link>
         <LanguageSwitcher />

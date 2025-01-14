@@ -96,7 +96,7 @@ const Home: React.FC<IHome> = ({ data, pageContext }) => {
           return (
             <Grid item xs={12} sm={6} md={4} lg={2} key={pokemon.id}>
               <Link
-                to={`/${language}/${localizedName.toLowerCase()}`}
+                to={`/${language}/${pokemon.name.toLowerCase()}`}
                 className="card"
               >
                 <Card className="card">
