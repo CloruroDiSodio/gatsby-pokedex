@@ -11,6 +11,16 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en', // Default language
+        langKeyForNull: 'en', // Language fallback for missing translations
+        prefixDefault: true, // Add `/en` for the default language in the URL
+        useLangKeyLayout: false, // Use the same layout for all languages
+        pagesPaths: ['/src/pages'], // Define the path for pages
+      },
+    },
+    {
       resolve: `gatsby-pokeapi-plugin`,
       options: {},
     },
