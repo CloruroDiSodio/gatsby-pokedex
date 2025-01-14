@@ -15,7 +15,9 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\""
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\"",
+    "cy:open": "cypress open --browser chrome --e2e",
+    "test:e2e": "START_SERVER_AND_TEST_INSECURE=1 CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:open"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -35,18 +37,22 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^8.19.1",
     "@typescript-eslint/parser": "^8.19.1",
+    "cypress": "^13.17.0",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
+    "gatsby-cypress": "^3.14.0",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
+    "start-server-and-test": "^2.0.10",
     "typescript": "^5.3.3",
     "typescript-eslint": "^8.19.1"
   }

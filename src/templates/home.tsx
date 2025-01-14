@@ -110,7 +110,12 @@ const Home: React.FC<IHome> = ({ data, pageContext }) => {
                     title={pokemon.name}
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      data-test="pokemon-card"
+                    >
                       {localizedName}
                     </Typography>
                   </CardContent>
